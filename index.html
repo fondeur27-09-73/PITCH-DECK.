@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapiens ROBOTIC - Pitch Deck para Inversionistas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            min-height: 100vh;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(59, 130, 246, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a"><stop offset="0" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="1" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><g><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></g></svg>');
+            background-size: cover;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        .cta-button {
+            background: linear-gradient(45deg, #F59E0B, #E59000);
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .logo-placeholder {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section min-h-screen flex items-center">
+        <div class="container mx-auto px-6">
+            <div class="glass-card max-w-4xl mx-auto text-center text-white">
+                <!-- Logo Placeholder -->
+                <div class="logo-placeholder">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/fca1735d0258b7fa61224f3ab36a497b" 
+                         alt="Sapiens ROBOTIC Logo" class="w-20 h-20">
+                </div>
+                
+                <h1 class="text-5xl font-bold mb-4">SAPIENS ROBOTIC</h1>
+                <p class="text-xl mb-8 opacity-90">Automatizando el futuro empresarial de República Dominicana</p>
+                <p class="text-lg mb-12 opacity-80">Soluciones robóticas inteligentes para hoteles, supermercados, bancos y restaurantes</p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <a href="#pitch-deck" class="cta-button text-white px-8 py-4 rounded-lg font-semibold text-lg inline-flex items-center justify-center">
+                        <i class="fas fa-presentation mr-3"></i> Ver Pitch Deck Completo
+                    </a>
+                    <a href="#contact" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-800 transition-all inline-flex items-center justify-center">
+                        <i class="fas fa-handshake mr-3"></i> Contactar Inversionista
+                    </a>
+                </div>
+                
+                <!-- Key Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                    <div class="stat-card">
+                        <div class="text-3xl font-bold text-blue-800 mb-2">$500K</div>
+                        <p class="text-gray-600">Inversión Requerida*</p>
+                        <p class="text-xs text-yellow-600 mt-1">*Desde $200K-$300K</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-3xl font-bold text-green-600 mb-2">40%</div>
+                        <p class="text-gray-600">ROI en 2 años</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">9</div>
+                        <p class="text-gray-600">Meses a Break-even</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Market Opportunity Section -->
+    <div class="bg-white py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Oportunidad de Mercado</h2>
+                <p class="text-xl text-gray-600">Tres sectores estratégicos con alto potencial de automatización</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="stat-card">
+                    <i class="fas fa-hotel text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Turismo & Hotelería</h3>
+                    <p class="text-3xl font-bold text-blue-800 mb-2">+90K</p>
+                    <p class="text-gray-600">Habitaciones hoteleras</p>
+                    <p class="text-sm text-gray-500 mt-2">77-80% ocupación promedio</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-shopping-cart text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Retail & Logística</h3>
+                    <p class="text-3xl font-bold text-green-800 mb-2">$3.4B</p>
+                    <p class="text-gray-600">Mercado alimentos</p>
+                    <p class="text-sm text-gray-500 mt-2">160+ supermercados modernos</p>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-university text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Banca & Finanzas</h3>
+                    <p class="text-3xl font-bold text-purple-800 mb-2">47</p>
+                    <p class="text-gray-600">Entidades financieras</p>
+                    <p class="text-sm text-gray-500 mt-2">Alta digitalización</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pitch Deck Section -->
+    <div id="pitch-deck" class="bg-gray-100 py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-gray-800 mb-8">Pitch Deck Completo</h2>
+            <p class="text-xl text-gray-600 mb-12">Presentación profesional diseñada para inversionistas</p>
+            
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-blue-800 text-white p-8">
+                    <h3 class="text-2xl font-bold mb-4">📊 Presentación Ejecutiva</h3>
+                    <p class="text-lg opacity-90">12 slides profesionales con toda la información para inversionistas</p>
+                </div>
+                
+                <div class="p-8">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-800">12</div>
+                            <p class="text-sm text-gray-600">Slides</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600">$1.8M</div>
+                            <p class="text-sm text-gray-600">Proyección Año 3</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-purple-600">3</div>
+                            <p class="text-sm text-gray-600">Sectores</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-yellow-600">2027</div>
+                            <p class="text-sm text-gray-600">Expansión</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="./pitch-deck.pdf" class="cta-button text-white px-6 py-3 rounded-lg font-semibold inline-flex items-center justify-center">
+                            <i class="fas fa-download mr-2"></i> Descargar PDF
+                        </a>
+                        <a href="./pitch-deck.html" class="bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold inline-flex items-center justify-center hover:bg-gray-700 transition-all">
+                            <i class="fas fa-eye mr-2"></i> Ver Online
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timeline Section -->
+    <div class="bg-gray-50 py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Timeline de Ejecución</h2>
+                <p class="text-xl text-gray-600">Plan estratégico de lanzamiento y expansión</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 mx-auto">1</div>
+                        <h3 class="font-bold text-lg mb-2">Preventas</h3>
+                        <p class="text-gray-600">Octubre 2025</p>
+                    </div>
+                    
+                    <div class="hidden md:block flex-1 h-1 bg-gray-300 mx-4"></div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 mx-auto">2</div>
+                        <h3 class="font-bold text-lg mb-2">Pilotos</h3>
+                        <p class="text-gray-600">Enero 2026</p>
+                    </div>
+                    
+                    <div class="hidden md:block flex-1 h-1 bg-gray-300 mx-4"></div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 mx-auto">3</div>
+                        <h3 class="font-bold text-lg mb-2">Expansión</h3>
+                        <p class="text-gray-600">2027</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="bg-blue-800 py-20 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8">¿Listo para Invertir en el Futuro?</h2>
+            <p class="text-xl mb-12 opacity-90">Únase a la revolución robótica en República Dominicana</p>
+            
+            <div class="max-w-md mx-auto bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg p-8">
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold mb-4">Ulises R. Fondeur</h3>
+                    <p class="opacity-80 mb-4">CEO y Fundador | DBA, MBA, MSc</p>
+                </div>
+                
+                <div class="space-y-3 text-left">
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope w-6"></i>
+                        <span class="ml-3">ulises.fondeur@sapiensrobotic.com</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope w-6"></i>
+                        <span class="ml-3">promolaboratorio@gmail.com</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-phone w-6"></i>
+                        <span class="ml-3">1-809-979-0205</span>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <a href="mailto:ulises.fondeur@sapiensrobotic.com" class="cta-button text-white px-6 py-3 rounded-lg font-semibold inline-flex items-center">
+                        <i class="fas fa-rocket mr-2"></i> Contáctanos Ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-gray-900 py-8 text-white text-center">
+        <p>&copy; 2025 Sapiens ROBOTIC. Automatizando el futuro empresarial de República Dominicana.</p>
+    </div>
+</body>
+</html>
