@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapiens ROBOTIC - Pitch Deck Completo</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8fafc;
+            line-height: 1.6;
+        }
+        
+        /* Sección de slide individual */
+        .slide-section {
+            min-height: 100vh;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            background: white;
+            margin-bottom: 2px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header común */
+        .header-bar {
+            height: 80px;
+            background-color: #1E3A8A;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            color: white;
+        }
+        
+        /* Footer común */
+        .footer-bar {
+            height: 10px;
+            background-color: #F59E0B;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+        
+        /* Área de contenido */
+        .content-area {
+            padding: 40px 60px;
+            flex: 1;
+        }
+        
+        /* Títulos */
+        .title {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            color: #1E3A8A;
+            position: relative;
+            display: inline-block;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: #F59E0B;
+        }
+        
+        /* Portada especial */
+        .hero-section {
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("https://page.gensparksite.com/slides_images/c35cf513450ebde5511ee6c26c1034dd.webp");
+            background-size: cover;
+            opacity: 0.2;
+            mix-blend-mode: overlay;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Tarjetas de estadísticas */
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-icon {
+            font-size: 3rem;
+            color: #1E3A8A;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #F59E0B;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Tarjeta de inversión */
+        .investment-card {
+            background: linear-gradient(135deg, #1E3A8A, #2563EB);
+            color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+        }
+        
+        .asterisk-note {
+            font-style: italic;
+            color: #F59E0B;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        
+        /* Próximos pasos */
+        .next-step-card {
+            background: #f8f9fa;
+            border-left: 4px solid #F59E0B;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Contacto */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #1E3A8A;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        /* Botón CTA */
+        .cta-button {
+            background: linear-gradient(45deg, #F59E0B, #E59000);
+            color: white;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+        }
+        
+        /* Gráficos */
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            margin: 2rem 0;
+        }
+        
+        /* Logo */
+        .logo-container {
+            height: 60px;
+            width: auto;
+        }
+        
+        .center-logo {
+            width: 250px;
+            height: auto;
+            margin: 2rem auto;
+        }
+        
+        /* Navegación sticky */
+        .nav-sticky {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(30, 58, 138, 0.9);
+            padding: 10px;
+            border-radius: 8px;
+            z-index: 1000;
+        }
+        
+        .nav-sticky a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin: 2px;
+            display: inline-block;
+            font-size: 12px;
+        }
+        
+        .nav-sticky a:hover {
+            background: #F59E0B;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navegación sticky -->
+<div class="nav-sticky">
+    <a href="#slide1">1</a>
+    <a href="#slide2">2</a>
+    <a href="#slide3">3</a>
+    <a href="#slide4">4</a>
+    <a href="#slide5">5</a>
+    <a href="#slide6">6</a>
+    <a href="#slide7">7</a>
+    <a href="#slide8">8</a>
+    <a href="#slide9">9</a>
+    <a href="#slide10">10</a>
+    <a href="#slide11">11</a>
+    <a href="#slide12">12</a>
+</div>
+
+<!-- SLIDE 1: PORTADA -->
+<section id="slide1" class="slide-section">
+    <div class="hero-section">
+        <div class="hero-content">
+            <img alt="Sapiens ROBOTIC Logo" class="center-logo" src="https://page.gensparksite.com/v1/base64_upload/fca1735d0258b7fa61224f3ab36a497b"/>
+            <h1 class="text-5xl font-bold mb-6">SAPIENS ROBOTIC</h1>
+            <h2 class="text-2xl mb-8 opacity-90">Automatizando el futuro empresarial de República Dominicana</h2>
+            <div style="width: 120px; height: 4px; background-color: #F59E0B; margin: 0 auto 2rem;"></div>
+            <p class="text-xl opacity-80 mb-12">Soluciones Robóticas Inteligentes | Robot as a Service</p>
+            <p class="text-lg"><strong>Presentado por:</strong> Ulises R. Fondeur / DBA. MBA. MSc.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 2: EL PROBLEMA -->
+<section id="slide2" class="slide-section">
+    <div class="header-bar">
+        <h2 class="text-xl font-semibold">Sapiens ROBOTIC</h2>
+        <p class="opacity-80">La Paradoja de Productividad Dominicana</p>
+        <img alt="Sapiens ROBOTIC Logo" class="logo-container" src="https://page.gensparksite.com/v1/base64_upload/fca1735d0258b7fa61224f3ab36a497b"/>
+    </div>
+    <div class="content-area">
+        <h1 class="title">El Problema: Productividad y Talento</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="stat-card">
+                <i class="fas fa-laptop-code stat-icon"></i>
+                <div class="stat-number">10%</div>
+                <p class="text-lg">Solo el 10% de trabajadores dominicanos usa herramientas digitales en su trabajo diario</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-user-slash stat-icon"></i>
+                <div class="stat-number">40%</div>
+                <p class="text-lg">de empleadores reporta vacantes sin cubrir por falta de habilidades técnicas</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-chart-line stat-icon"></i>
+                <div class="stat-number">+27%</div>
+                <p class="text-lg">Costo laboral vs. productividad en sectores clave (hotelería, retail y banca)</p>
+            </div>
+        </div>
+        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+            <p class="text-lg text-gray-700">
+                <span class="font-bold text-red-600">La urgencia es real:</span> La economía dominicana requiere automatización urgente para seguir compitiendo globalmente y aprovechar el crecimiento del 4-5% anual proyectado.
+            </p>
+        </div>
+    </div>
+    <div class="footer-bar"></div>
+</section>
+
+<!-- SLIDE 3: OPORTUNIDAD -->
+<section id="slide3" class="slide-section">
+    <div class="header-bar">
+        <h2 class="text-xl font-semibold">Sapiens ROBOTIC</h2>
+        <p class="opacity-80">Oportunidad de Mercado Multisectorial</p>
+        <img alt="Sapiens ROBOTIC Logo" class="logo-container" src="https://page.gensparksite.com/v1/base64_upload/fca1735d0258b7fa61224f3ab36a497b"/>
+    </div>
+    <div class="content-area">
+        <h1 class="title">Oportunidad de Mercado: US$4.9B</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="stat-card">
+                <i class="fas fa-hotel stat-icon"></i>
+                <div class="stat-number">+90K</div>
+                <h3 class="text-xl font-bold mb-2">Turismo & Hotelería</h3>
+                <p class="text-gray-600">Habitaciones hoteleras con tasas de ocupación del 77-80%</p>
+                <p class="text-blue-600 font-semibold mt-2">US$1.2B segmento lujo</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-shopping-cart stat-icon"></i>
+                <div class="stat-number">$3.4B</div>
+                <h3 class="text-xl font-bold mb-2">Retail & Logística</h3>
+                <p class="text-gray-600">Mercado de alimentos + 160 supermercados modernos</p>
+                <p class="text-green-600 font-semibold mt-2">15% crecimiento e-commerce</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-university stat-icon"></i>
+                <div class="stat-number">47</div>
+                <h3 class="text-xl font-bold mb-2">Banca & Finanzas</h3>
+                <p class="text-gray-600">Entidades financieras con alta digitalización</p>
+                <p class="text-purple-600 font-semibold mt-2">78% activos concentrados</p>
+            </div>
+        </div>
+        <div class="bg-gradient-to-r from-blue-800 to-blue-600 text-white p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Contexto Económico Favorable</h3>
+            <p class="text-lg">República Dominicana experimenta un crecimiento del 4-5% anual, con récord histórico de US$4.5B en IED durante 2024. La Agenda Digital 2030 y ENIA impulsan la adopción de Industria 4.0.</p>
+        </div>
+    </div>
+    <div class="footer-bar"></div>
+</section>
+
+<!-- SLIDE 4: SOLUCIÓN -->
+<section id="slide4" class="slide-section">
+    <div class="header-bar">
+        <h2 class="text-xl font-semibold">Sapiens ROBOTIC</h2>
+        <p class="opacity-80">Solución Tecnológica Integral</p>
+        <img alt="Sapiens ROBOTIC Logo" class="logo-container" src="https://page.gensparksite.com/v1/base64_upload/fca1735d0258b7fa61224f3ab36a497b"/>
+    </div>
+    <div class="content-area">
+        <h1 class="title">Solución Sapiens ROBOTIC</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">Robots Inteligentes para Servicios</h3>
+                <ul class="space-y-4 text-lg">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <span><strong>Hospitalidad:</strong> ConciergeBot, PorterBot, CleanBot-H</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <span><strong>Retail:</strong> CleanBot-R, StockBot, PickerBot</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                        <span><strong>Banca:</strong> RecepcionistBot, SecureBot, AdminBot</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">Modelo Diferenciado</h3>
+                <div class="space-y-4">
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="font-bold text-blue-800">Robot as a Service (RaaS)</h4>
+                        <p class="text-gray-700">Modelo híbrido con venta directa</p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                        <h4 class="font-bold text-yellow-800">Muralla de Servicio Local</h4>
+                        <p class="text-gray-700">Soporte 24/7, repuestos locales, técnicos capacitados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bar"></div>
+</section>
+
+<!-- SLIDE 5: PORTAFOLIO -->
+<section id="slide5" class="slide-section">
+    <div class="header-bar">
+        <h2 class="text-xl font-semibold">Sapiens ROBOTIC</h2>
+        <p class="opacity-80">Portafolio de Productos Robóticos</p>
+        <img alt="Sapiens ROBOTIC Logo" class="logo-container" src="https://page.gensparksite.com/v1/base64_upload/fca1735d0258b7fa61224f3ab36a497b"/>
+    </div>
+    <div class="content-area">
+        <h1 class="title">Nuestro Portafolio</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Hospitalidad -->
+            <div class="bg-blue-50 p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-blue-800 mb-4">
+                    <i class="fas fa-hotel mr-2"></i>Hospitalidad
+                </h3>
+                <div class="space-y-3">
+                    <div class="bg-white p-3 rounded border-l-4 border-blue-500">
+                        <h4 class="font-semibold">ConciergeBot</h4>
+                        <p class="text-sm text-gray-600">Recepción multilingüe, check-in automático</p>
+                    </div>
+                    <div class="bg-white p-3 rounded border-l-4 border-blue-500">
+                        <h4 class="font-semibold">CleanBot-H</h4>
+                        <p class="text-sm text-gray-600">Limpieza autónoma de áreas comunes</p>
+                    </div>
+                    <div class="bg-white p-3 rounded border-l-4 border-blue-500">
+                        <h4 class="font-semibold">PorterBot</h4>
+                        <p class="text-sm text-gray-600">Transporte de equipaje y room service</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Retail -->
+            <div class="bg-green-50 p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-green-800 mb-4">
+                    <i class="fas fa-shopping-cart mr-2"></i>Retail & Logística
+                </h3>
+                <div class="space-y-3">
+                    <div class="bg-white p-3 rounded border-l-4 border-green-500">
+                        <h4 class="font-semibold">CleanBot-R</h4>
+                        <p class="text-sm text-gray-600">Limpieza industrial de supermercados</p>
+                    </div>
+                    <div class="bg-white p-3 rounded border-l-4 border-green-500">
+                        <h4 class="font-semibold">StockBot</h4>
+                        <p class="text-sm text-gray-600">Control de inventario y escaneo</p>
+                    </div>
+                    <div class="bg-white p-3 rounded border-l-4 border-green-500">
+                        <h4 class="font-semibold">PickerBot</h4>
+                        <p class="text-sm text-gray-600">Automatización de almacenes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banca -->
+            <div class="bg-purple-50 p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-purple-800 mb-4">
+                    <i class="fas fa-university mr-2"></i>Banca & Empresas
+                </h3>
+                <div class="space-y-3">
+                    <div class="bg-white p-3 rounded border-l-4 border-purple-500">
+                        <h4 class="font-semibold">RecepcionistBot</h4>
+                        <p class="text-sm text-gray-600">Atención y guía de clientes</p>
+                    </div>
+                    <div class="bg-white p-3 rounded border-l-4 border-purple-500">
+                        <h4 class="font-semibold">SecureBot</h4>
+                        <p class="text-sm text-gray-600">Vigilancia inteligente autónoma</p>
+                    </div>
+                    <div class="bg-white p-3 rounded border-l-4 border-purple-500">
+                        <h4 class="font-semibold">AdminBot</h4>
+                        <p class="text-sm text-gray-600">Transporte de documentos internos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bar"></div>
+</section>
+
+<!-- SLIDE 6: MERCADO OBJETIVO -->
+<section id="slide6" class="slide-section">
+    <div class="header-bar">
+        <h2 class="text-xl font-semibold">Sapiens ROBOTIC</h2>
+        <p class="opacity-80">Mercado Objetivo y Tracción Inicial</p>
+        <img alt="Sapiens ROBOTIC Logo" class="logo-container" src="https://page.gensparksite.com/v1/base64_upload/fca1735d0258b7fa61224f3ab36a497b"/>
+    </div>
+    <div class="content-area">
+        <h1 class="title">Sectores Estratégicos</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">Mercado Inicial</h3>
+                <div class="space-y-6">
+                    <div class="flex items-center p-4 bg-blue-50 rounded-lg">
+                        <div class="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                            🏨
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Hoteles Premium</h4>
+                            <p class="text-sm text-gray-600">Cadenas internacionales y resorts de lujo</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                        <div class="w-12 h-12 bg-green-800 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                            🛒
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Grandes Cadenas</h4>
+                            <p class="text-sm text-gray-600">Grupo Ramos, CCN, Bravo</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-purple-50 rounded-lg">
+                        <div class="w-12 h-12 bg-purple-800 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                            🏦
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Banca Digital</h4>
+                            <p class="text-sm text-gray-600">Banreservas, BHD León, Banco Popular</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">Estrategia de Entrada</h3>
+                <div class="space-y-4">
+                    <div class="next-step-card">
+                        <h4 class="font-bold text-gray-700">Alianza ASONAHORES</h4>
+                        <p class="text-sm text-gray-600">Respaldo oficial del sector hotelero</p>
+                    </div>
+                    <div class="next-step-card">
+                        <h4 class="font-bold text-gray-700">DATE 2025</h4>
+                        <p class="text-sm text-gray-600">Participación destacada en el evento del 14-16 mayo</p>
+                    </div>
+                    <div class="next-step-card">
+                        <h4 class="font-bold text-gray-700">Proyectos Lighthouse</h4>
+                        <p class="text-sm text-gray-600">Pilotos de alto perfil en cadenas innovadoras</p>
+                    </div>
+                    <div class="next-step-card">
+                        <h4 class="font-bold text-gray-700">Enfoque Corporativo</h4>
+                        <p class="text-sm text-gray-600">Ventas directas a oficinas centrales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bar"></div>
+</section>
+
+<!-- SLIDE 7: MODELO DE NEGOCIO -->
+<section id="slide7" class="slide-section">
+    <div class="header-bar">
+        <h2 class="text-xl font-semibold">Sapiens ROBOTIC</h2>
+        <p class="opacity-80">Modelo de Negocio Híbrido y Escalable</p>
+        <img alt="Sapiens ROBOTIC Logo" class="logo-container" src="https://page.gensparksite.com/v1/base64_upload/fca1735d0258b7fa61224f3ab36a497b"/>
+    </div>
+    <div class="content-area">
+        <h1 class="title">Estrategia de Negocio</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">Modelos de Ingresos</h3>
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2">🔄 Robot as a Service (RaaS)</h4>
+                        <p class="mb-4">Tarifa mensual todo incluido: hardware, mantenimiento, soporte 24/7, actualizaciones</p>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Reduce barrera inicial de entrada</li>
+                            <li>• Flujo de ingresos recurrente y estable</li>
+                            <li>• Modelo OPEX vs CAPEX para clientes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white p-6 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2">💰 Venta Directa</h4>
+                        <p class="mb-4">Para grandes clientes con contrato anual de mantenimiento obligatorio</p>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Ideal para corporaciones que prefieren activos propios</li>
+                            <li>• Ingresos inmediatos significativos</li>
+                            <li>• Contratos de servicio garantizados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">Ahorro Demostrable</h3>
+                <div class="bg-white border border-gray-200 rounded-lg p-6 mb-6">
+                    <h4 class="font-bold text-lg mb-4">Ejemplo: Limpieza Hotelera</h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span>Empleado humano (anual):</span>
+                            <span class="font-bold text-red-600">RD$495,508</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Sapiens CleanBot-H (anual):</span>
+                            <span class="font-bold text-green-600">RD$360,000</span>
+                        </div>
+                        <hr>
+                        <div class="flex justify-between items-center text-lg font-bold">
+                            <span>Ahorro anual:</span>
+                            <span class="text-blue-600">27%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                    <p class="text-green-800 font-semibold">En restaurantes y gastronomía: +35% de ahorro adicional</p>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="font-bold text-lg mb-3">Tarifas Competitivas</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Modelo RaaS mensual competitivo vs costos laborales</li>
+                        <li>• Alquiler flexible para eventos y temporadas</li>
+                        <li>• ROI claro y medible para clientes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bar"></div>
+</section>
+
+<!-- SLIDE 8: GO-TO-MARKET -->
+<section id="slide8" class="slide-section">
+    <div class="header-bar">
+        <h2 class="text-xl font-semibold">Sapiens ROBOTIC</h2>
+        <p class="opacity-80">Estrategia Go-To-Market</p>
+        <img alt="Sapiens ROBOTIC Logo" class="logo-container" src="https://page.gensparksite.com/v1/base64_upload/fca1735d0258b7fa61224f3ab36a497b"/>
+    </div>
+    <div class="content-area">
+        <h1 class="title">Estrategia de Entrada al Mercado</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">Alianzas Estratégicas</h3>
+                <div class="space-y-4">
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="font-bold text-blue-800 mb-2">🏨 ASONAHORES</h4>
+                        <p class="text-sm text-gray-700">Alianza oficial con la Asociación Nacional de Hoteles y Restaurantes. Acceso directo a +400 establecimientos asociados.</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                        <h4 class="font-bold text-green-800 mb-2">🏭 AIRD</h4>
+                        <p class="text-sm text-gray-700">Colaboración con la Asociación de Industrias de la República Dominicana para automatización logística.</p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                        <h4 class="font-bold text-yellow-800 mb-2">📊 DATE 2025</h4>
+                        <p class="text-sm text-gray-700">Participación destacada del 14-16 mayo. Stand interactivo con demostraciones en vivo de ConciergeBot, PorterBot y CleanBot-H.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">Táctica de Ventas</h3>
+                <div class="space-y-4">
+                    <div class="next-step-card">
+                        <h4 class="font-bold text-gray-700">1. Enfoque Corporativo</h4>
+                        <p class="text-sm text-gray-600">Ventas directas a oficinas centrales de Grupo Ramos, CCN y Bravo. Evitar gerentes de tiendas individuales.</p>
+                    </div>
+                    <div class="next-step-card">
+                        <h4 class="font-bold text-gray-700">2. Proyectos Lighthouse</h4>
+                        <p class="text-sm text-gray-600">Asegurar piloto de alto perfil en cadena hotelera innovadora durante el primer año.</p>
+                    </div>
+                    <div class="next-step-card">
+                        <h4 class="font-bold text-gray-700">3. Demostraciones en Sitio</h4>
+                        <p class="text-sm text-gray-600">Demostraciones gratuitas en las instalaciones del cliente con ROI claro y convincente.</p>
+                    </div>
+                    <div class="next-step-card">
+                        <h4 class="font-bold text-gray-700">4. Muralla de Servicio</h4>
+                        <p class="text-sm text-gray-600">Énfasis en soporte local 24/7 como ventaja competitiva vs. soluciones internacionales.</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-gradient-to-r from-green-600 to-green-800 text-white p-6 rounded-lg">
+                    <h4 class="font-bold text-lg mb-2">🎯 Diferenciador Clave</h4>
+                    <p>Mientras los competidores internacionales como SoftBank, Tennant o Epson compiten por reconocimiento global, <strong>Sapiens ROBOTIC compete por calidad de servicio local</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bar"></div>
+</section>
+
+<!-- SLIDE 9: PROYECCIONES FINANCIERAS -->
+<section id="slide9" class="slide-section">
+    <div class="header-bar">
+        <h2 class="text-xl font-semibold">Sapiens ROBOTIC</h2>
+        <p class="opacity-80">Proyecciones Financieras de Rápido Crecimiento</p>
+        <img alt="Sapiens ROBOTIC Logo" class="logo-container" src="https://page.gensparksite.com/v1/base64_upload/fca1735d0258b7fa61224f3ab36a497b"/>
+    </div>
+    <div class="content-area">
+        <h1 class="title">Panorama Financiero a 3 Años</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">Proyecciones de Ingresos</h3>
+                <div class="space-y-4">
+                    <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6 rounded-lg">
+                        <h4 class="text-xl font-bold">Año 1</h4>
+                        <div class="grid grid-cols-2 gap-4 mt-3">
+                            <div>
+                                <p class="text-sm opacity-80">Ingresos</p>
+                                <p class="text-2xl font-bold">$750K</p>
+                            </div>
+                            <div>
+                                <p class="text-sm opacity-80">Beneficio Neto</p>
+                                <p class="text-2xl font-bold">$250K</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-green-600 to-green-800 text-white p-6 rounded-lg">
+                        <h4 class="text-xl font-bold">Año 2</h4>
+                        <div class="grid grid-cols-2 gap-4 mt-3">
+                            <div>
+                                <p class="text-sm opacity-80">Ingresos</p>
+                                <p class="text-2xl font-bold">$1.2M</p>
+                            </div>
+                            <div>
+                                <p class="text-sm opacity-80">Beneficio Neto</p>
+                                <p class="text-2xl font-bold">$470K</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white p-6 rounded-lg">
+                        <h4 class="text-xl font-bold">Año 3</h4>
+                        <div class="grid grid-cols-2 gap-4 mt-3">
+                            <div>
+                                <p class="text-sm opacity-80">Ingresos</p>
+                                <p class="text-2xl font-bold">$1.8M</p>
+                            </div>
+                            <div>
+                                <p class="text-sm opacity-80">Beneficio Neto</p>
+                                <p class="text-2xl font-bold">$780K</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">Métricas Clave</h3>
+                <div class="grid grid-cols-2 gap-6 mb-8">
+                    <div class="text-center p-6 bg-green-50 rounded-lg">
+                        <div class="text-3xl font-bold text-green-600 mb-2">40%</div>
+                        <p class="text-gray-700">ROI en 2 años</p>
+                    </div>
+                    <div class="text-center p-6 bg-blue-50 rounded-lg">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">9</div>
+                        <p class="text-gray-700">Meses a Break-even</p>
+                    </div>
+                </div>
+                
+                <h4 class="text-xl font-bold text-gray-800 mb-4">Proyección de Ventas (Unidades)</h4>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b">
+                                <th class="text-left py-2">Sector</th>
+                                <th class="text-center py-2">Año 1</th>
+                                <th class="text-center py-2">Año 2</th>
+                                <th class="text-center py-2">Año 3</th>
+                            </tr>
+                        </thead>
+                        <tbody class="space-y-1">
+                            <tr class="border-b">
+                                <td class="py-2">Hoteles</td>
+                                <td class="text-center py-2">120</td>
+                                <td class="text-center py-2">180</td>
+                                <td class="text-center py-2">250</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2">Restaurantes</td>
+                                <td class="text-center py-2">80</td>
+                                <td class="text-center py-2">120</td>
+                                <td class="text-center py-2">160</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2">Supermercados</td>
+                                <td class="text-center py-2">60</td>
+                                <td class="text-center py-2">100</td>
+                                <td class="text-center py-2">140</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-2">Bancos</td>
+                                <td class="text-center py-2">70</td>
+                                <td class="text-center py-2">90</td>
+                                <td class="text-center py-2">120</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-500 p-4">
+                    <p class="text-yellow-800"><strong>Nota:</strong> Las proyecciones se basan en un modelo robusto de penetración de mercado impulsado por estrategias de ventas efectivas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bar"></div>
+</section>
+
+<!-- SLIDE 10: VENTAJAS COMPETITIVAS -->
+<section id="slide10" class="slide-section">
+    <div class="header-bar">
+        <h2 class="text-xl font-semibold">Sapiens ROBOTIC</h2>
+        <p class="opacity-80">Ventajas Competitivas Locales</p>
+        <img alt="Sapiens ROBOTIC Logo" class="logo-container" src="https://page.gensparksite.com/v1/base64_upload/fca1735d0258b7fa61224f3ab36a497b"/>
+    </div>
+    <div class="content-area">
+        <h1 class="title">Ventaja Competitiva Única</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">🛡️ Muralla de Servicio Local</h3>
+                <div class="space-y-4">
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="font-bold text-blue-800 mb-3">🔧 Soporte Técnico 24/7</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Personal capacitado disponible siempre</li>
+                            <li>• Respuesta rápida ante cualquier incidencia</li>
+                            <li>• Mantenimiento preventivo programado</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                        <h4 class="font-bold text-green-800 mb-3">📦 Repuestos en el País</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Inventario local de componentes críticos</li>
+                            <li>• Sin tiempos de espera por importación</li>
+                            <li>• Reparaciones inmediatas garantizadas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                        <h4 class="font-bold text-yellow-800 mb-3">🎓 Entrenamiento Presencial</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Capacitación completa del personal del cliente</li>
+                            <li>• Acompañamiento durante implementación</li>
+                            <li>• Soporte consultivo continuo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">🆚 vs. Competencia Internacional</h3>
+                <div class="comparison-table bg-white border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="bg-gray-50 p-4 border-b">
+                        <h4 class="font-bold text-center">Comparación Competitiva</h4>
+                    </div>
+                    <div class="p-4">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-3 border-b">
+                                <span class="font-medium">Soporte Local 24/7</span>
+                                <div class="flex space-x-8">
+                                    <span class="text-green-600 font-bold">✓ Sapiens</span>
+                                    <span class="text-red-600">✗ Otros</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b">
+                                <span class="font-medium">Repuestos Inmediatos</span>
+                                <div class="flex space-x-8">
+                                    <span class="text-green-600 font-bold">✓ Sapiens</span>
+                                    <span class="text-red-600">✗ Otros</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b">
+                                <span class="font-medium">Entrenamiento Presencial</span>
+                                <div class="flex space-x-8">
+                                    <span class="text-green-600 font-bold">✓ Sapiens</span>
+                                    <span class="text-red-600">✗ Otros</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b">
+                                <span class="font-medium">Flexibilidad de Modelos</span>
+                                <div class="flex space-x-8">
+                                    <span class="text-green-600 font-bold">✓ Sapiens</span>
+                                    <span class="text-yellow-600">~ Otros</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center py-3">
+                                <span class="font-medium">Costos de Importación</span>
+                                <div class="flex space-x-8">
+                                    <span class="text-green-600 font-bold">Ninguno</span>
+                                    <span class="text-red-600">Altos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6 rounded-lg">
+                    <h4 class="font-bold text-lg mb-2">💡 Filosofía Competitiva</h4>
+                    <p class="italic">"No competimos por reconocimiento global, competimos por calidad de servicio local. Nuestros clientes saben que estamos aquí cuando nos necesiten."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bar"></div>
+</section>
+
+<!-- SLIDE 11: EQUIPO -->
+<section id="slide11" class="slide-section">
+    <div class="header-bar">
+        <h2 class="text-xl font-semibold">Sapiens ROBOTIC</h2>
+        <p class="opacity-80">Equipo Fundador y Ejecución</p>
+        <img alt="Sapiens ROBOTIC Logo" class="logo-container" src="https://page.gensparksite.com/v1/base64_upload/fca1735d0258b7fa61224f3ab36a497b"/>
+    </div>
+    <div class="content-area">
+        <h1 class="title">Liderazgo con Visión Tecnológica</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-lg mb-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-6">
+                            <i class="fas fa-user-tie text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Ulises R. Fondeur</h3>
+                            <p class="text-lg opacity-90">CEO y Fundador</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white bg-opacity-10 p-3 rounded">
+                            <h4 class="font-bold text-sm">Educación</h4>
+                            <p class="text-sm">DBA, IMBA, MSc</p>
+                        </div>
+                        <div class="bg-white bg-opacity-10 p-3 rounded">
+                            <h4 class="font-bold text-sm">Especialización</h4>
+                            <p class="text-sm">IA y Negocios Int.</p>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-3">Formación Académica Completa:</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>• <strong>DBA:</strong> Doctorado en Administración de Negocios</li>
+                        <li>• <strong>Master en IA:</strong> Especialización en Inteligencia Artificial</li>
+                        <li>• <strong>IMBA:</strong> Máster Internacional en Negocios</li>
+                        <li>• <strong>Licenciaturas:</strong> Negocios y Computación Matemática</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                    <h4 class="font-bold text-yellow-800 mb-3">🎯 Hard Skills Clave</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• <strong>Física Aplicada:</strong> Comprensión de principios robóticos</li>
+                        <li>• <strong>Sistemas de Energía:</strong> Optimización energética</li>
+                        <li>• <strong>IA y Machine Learning:</strong> Algoritmos avanzados</li>
+                        <li>• <strong>Gestión Internacional:</strong> Experiencia global</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-bold text-blue-800 mb-6">Equipo Directivo</h3>
+                <div class="space-y-4 mb-8">
+                    <div class="bg-white border border-gray-200 p-4 rounded-lg">
+                        <h4 class="font-bold text-gray-800">🤖 Experiencia en Robótica</h4>
+                        <p class="text-gray-600 text-sm">Amplio conocimiento en desarrollo e integración de sistemas robóticos inteligentes</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 p-4 rounded-lg">
+                        <h4 class="font-bold text-gray-800">🧠 Integración de IA</h4>
+                        <p class="text-gray-600 text-sm">Especialización en algoritmos de aprendizaje automático para aplicaciones comerciales</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 p-4 rounded-lg">
+                        <h4 class="font-bold text-gray-800">👥 Gestión de Atención al Cliente</h4>
+                        <p class="text-gray-600 text-sm">Experiencia comprobada en excelencia de servicio y satisfacción del cliente</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 p-4 rounded-lg">
+                        <h4 class="font-bold text-gray-800">📈 Planificación Estratégica</h4>
+                        <p class="text-gray-600 text-sm">Desarrollo de estrategias de ventas y penetración de mercado</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-green-600 to-green-800 text-white p-6 rounded-lg">
+                    <h4 class="font-bold text-lg mb-3">🚀 Compromiso de Ejecución</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle mr-3"></i>
+                            <span>Equipo técnico y comercial local formado</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle mr-3"></i>
+                            <span>Experiencia en gestión de proyectos complejos</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle mr-3"></i>
+                            <span>Visión clara de expansión regional</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle mr-3"></i>
+                            <span>Compromiso con la innovación continua</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600 italic">"Nuestro equipo combina expertise técnico con profundo conocimiento del mercado dominicano"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bar"></div>
+</section>
+
+<!-- SLIDE 12: INVERSIÓN -->
+<section id="slide12" class="slide-section">
+    <div class="header-bar">
+        <h2 class="text-xl font-semibold">Sapiens ROBOTIC</h2>
+        <p class="opacity-80">Inversión Requerida y Próximos Pasos</p>
+        <img alt="Sapiens ROBOTIC Logo" class="logo-container" src="https://page.gensparksite.com/v1/base64_upload/fca1735d0258b7fa61224f3ab36a497b"/>
+    </div>
+    <div class="content-area">
+        <h1 class="title">Su Oportunidad de Inversión</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <!-- Investment Amount Card -->
+                <div class="investment-card mb-8">
+                    <p class="text-lg opacity-80">Capital Inicial Requerido</p>
+                    <h2 class="text-5xl font-bold my-4">USD $500,000*</h2>
+                    <p class="asterisk-note">* El capital inicial puede variar entre $200,000-$300,000 para comenzar</p>
+                    <p class="text-sm opacity-70 mt-4">ROI proyectado: 40% en 2 años</p>
+                </div>
+                
+                <!-- Chart Container -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                    <h4 class="font-bold text-gray-800 mb-4 text-center">Distribución de Inversión</h4>
+                    <div class="chart-container">
+                        <canvas id="investmentChart"></canvas>
+                    </div>
+                    <!-- Chart Legend -->
+                    <div class="grid grid-cols-2 gap-3 mt-4 text-sm">
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-blue-800 mr-2 rounded"></div>
+                            <span>Tecnología/Inventario (40%)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-yellow-500 mr-2 rounded"></div>
+                            <span>Marketing (30%)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-green-600 mr-2 rounded"></div>
+                            <span>Operaciones (20%)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-red-500 mr-2 rounded"></div>
+                            <span>Contingencia (10%)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Próximos Pasos</h3>
+                
+                <!-- Timeline Steps -->
+                <div class="space-y-4 mb-8">
+                    <div class="next-step-card">
+                        <h4 class="font-bold text-gray-700">1. Due Diligence</h4>
+                        <p class="text-sm text-gray-600">Revisión detallada del business plan y proyecciones financieras</p>
+                    </div>
+                    <div class="next-step-card">
+                        <h4 class="font-bold text-gray-700">2. Acuerdo de Inversión</h4>
+                        <p class="text-sm text-gray-600">Negociación de términos y firma de acuerdos</p>
+                    </div>
+                    <div class="next-step-card">
+                        <h4 class="font-bold text-gray-700">3. Preventas (Octubre 2025)</h4>
+                        <p class="text-sm text-gray-600">Inicio de campañas de preventa con clientes estratégicos identificados</p>
+                    </div>
+                    <div class="next-step-card">
+                        <h4 class="font-bold text-gray-700">4. Primeros Pilotos (Enero 2026)</h4>
+                        <p class="text-sm text-gray-600">Lanzamiento de proyectos lighthouse en cadenas hoteleras premium</p>
+                    </div>
+                    <div class="next-step-card">
+                        <h4 class="font-bold text-gray-700">5. Expansión Caribeña (2027)</h4>
+                        <p class="text-sm text-gray-600">Acceso a mercados adicionales en Jamaica, Bahamas y Puerto Rico</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Contacto</h3>
+                    <div class="space-y-3">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-user"></i></div>
+                            <div>
+                                <p class="font-medium">Ulises R. Fondeur</p>
+                                <p class="text-sm text-gray-600">CEO y Fundador</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <p>ulises.fondeur@sapiensrobotic.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <p>promolaboratorio@gmail.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <p>1-809-979-0205</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 text-center">
+                        <a href="mailto:ulises.fondeur@sapiensrobotic.com" class="cta-button">
+                            <i class="fas fa-rocket mr-2"></i> Únase a la Revolución Robótica
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bar"></div>
+</section>
+
+<script>
+    // Investment Distribution Chart
+    document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('investmentChart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Tecnología/Inventario', 'Marketing', 'Operaciones', 'Contingencia'],
+                    datasets: [{
+                        data: [40, 30, 20, 10],
+                        backgroundColor: [
+                            '#1E3A8A', // Blue
+                            '#F59E0B', // Yellow
+                            '#059669', // Green
+                            '#EF4444'  // Red
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': $' + (500000 * context.raw / 100).toLocaleString() + ' (' + context.raw + '%)';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    });
+    
+    // Smooth scrolling for navigation
+    document.querySelectorAll('.nav-sticky a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
