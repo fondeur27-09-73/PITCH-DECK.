@@ -1,1 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapiens ROBOTIC - Investment Pitch Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #ff6b6b;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: white;
+            padding: 4rem 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .white-bg {
+            background: white;
+        }
+        
+        .gray-bg {
+            background: #f8f9fa;
+        }
+        
+        /* Problem & Solution */
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .content-box {
+            padding: 2rem;
+        }
+        
+        .content-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .content-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .content-box li {
+            margin: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .content-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        /* Market Section */
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .market-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .market-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Business Model */
+        .revenue-streams {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .revenue-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #667eea;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        /* Financial Projections */
+        .financial-chart {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .problem-solution {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Sapiens ROBOTIC</div>
+            <ul class="nav-links">
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#market">Market</a></li>
+                <li><a href="#business">Business</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#financials">Financials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Automating the Business Future of the Dominican Republic</h1>
+                <p>Smart robotic solutions for hotels, supermarkets, banks and restaurants</p>
+                <div class="cta-buttons">
+                    <a href="#financials" class="btn btn-primary">View Investment Details</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$500K</div>
+                    <div class="stat-label">Investment Required*</div>
+                    <small>*From $200K-$300K</small>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">ROI in 2 Years</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">9</div>
+                    <div class="stat-label">Months to Break-even</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$2.5B</div>
+                    <div class="stat-label">Dominican Market Size</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section id="problem" class="section white-bg">
+        <div class="container">
+            <div class="problem-solution">
+                <div class="content-box">
+                    <h3>🚨 The Problem</h3>
+                    <ul>
+                        <li>Labor shortage in service industries</li>
+                        <li>High operational costs in hospitality</li>
+                        <li>Inconsistent customer service quality</li>
+                        <li>Limited automation in Dominican businesses</li>
+                        <li>Growing demand for contactless services</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>💡 Our Solution</h3>
+                    <ul>
+                        <li>AI-powered service robots</li>
+                        <li>Automated customer assistance</li>
+                        <li>24/7 operational capability</li>
+                        <li>Multilingual support (Spanish/English)</li>
+                        <li>Cost-effective automation platform</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity -->
+    <section id="market" class="section gray-bg">
+        <div class="container">
+            <h2 class="section-title">Market Opportunity</h2>
+            <div class="market-grid">
+                <div class="market-card">
+                    <div class="market-icon">🏨</div>
+                    <h3>Hotels & Tourism</h3>
+                    <p>$850M market in DR</p>
+                    <p>450+ hotels nationwide</p>
+                </div>
+                <div class="market-card">
+                    <div class="market-icon">🛒</div>
+                    <h3>Retail & Supermarkets</h3>
+                    <p>$1.2B market size</p>
+                    <p>Growing e-commerce sector</p>
+                </div>
+                <div class="market-card">
+                    <div class="market-icon">🏦</div>
+                    <h3>Banking & Finance</h3>
+                    <p>$680M fintech market</p>
+                    <p>Digital transformation focus</p>
+                </div>
+                <div class="market-card">
+                    <div class="market-icon">🍽️</div>
+                    <h3>Restaurants</h3>
+                    <p>$420M food service market</p>
+                    <p>Post-pandemic automation need</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Model -->
+    <section id="business" class="section white-bg">
+        <div class="container">
+            <h2 class="section-title">Business Model</h2>
+            <div class="revenue-streams">
+                <div class="revenue-card">
+                    <h3>🤖 Robot Sales</h3>
+                    <p>$15K - $45K per unit</p>
+                    <p>One-time revenue</p>
+                </div>
+                <div class="revenue-card">
+                    <h3>🔧 Maintenance</h3>
+                    <p>$500 - $1,500/month</p>
+                    <p>Recurring revenue</p>
+                </div>
+                <div class="revenue-card">
+                    <h3>📱 Software Licensing</h3>
+                    <p>$200 - $800/month</p>
+                    <p>SaaS model</p>
+                </div>
+                <div class="revenue-card">
+                    <h3>🎓 Training & Support</h3>
+                    <p>$2K - $5K per project</p>
+                    <p>Service revenue</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="section gray-bg">
+        <div class="container">
+            <h2 class="section-title">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">CEO</div>
+                    <h3>Chief Executive Officer</h3>
+                    <p>10+ years in robotics and AI</p>
+                    <p>Former tech executive</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">CTO</div>
+                    <h3>Chief Technology Officer</h3>
+                    <p>PhD in Robotics Engineering</p>
+                    <p>15+ years R&D experience</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">CMO</div>
+                    <h3>Chief Marketing Officer</h3>
+                    <p>Caribbean market specialist</p>
+                    <p>8+ years in tech marketing</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">CFO</div>
+                    <h3>Chief Financial Officer</h3>
+                    <p>Investment banking background</p>
+                    <p>Startup finance expert</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Projections -->
+    <section id="financials" class="section white-bg">
+        <div class="container">
+            <h2 class="section-title">Financial Projections</h2>
+            <div class="financial-chart">
+                <h3>5-Year Revenue Projection</h3>
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="background: #667eea; height: 50px; margin-bottom: 1rem; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">$200K</div>
+                        <p>Year 1</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="background: #667eea; height: 100px; margin-bottom: 1rem; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">$800K</div>
+                        <p>Year 2</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="background: #667eea; height: 150px; margin-bottom: 1rem; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">$2.1M</div>
+                        <p>Year 3</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="background: #667eea; height: 200px; margin-bottom: 1rem; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">$4.5M</div>
+                        <p>Year 4</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="background: #667eea; height: 250px; margin-bottom: 1rem; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">$8.2M</div>
+                        <p>Year 5</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="financial-chart">
+                    <h3>Investment Use</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin: 1rem 0; padding: 0.5rem; background: #f8f9fa; border-left: 4px solid #667eea;">40% - Product Development</li>
+                        <li style="margin: 1rem 0; padding: 0.5rem; background: #f8f9fa; border-left: 4px solid #28a745;">25% - Marketing & Sales</li>
+                        <li style="margin: 1rem 0; padding: 0.5rem; background: #f8f9fa; border-left: 4px solid #ffc107;">20% - Operations</li>
+                        <li style="margin: 1rem 0; padding: 0.5rem; background: #f8f9fa; border-left: 4px solid #dc3545;">15% - Working Capital</li>
+                    </ul>
+                </div>
+                <div class="financial-chart">
+                    <h3>Key Metrics</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin: 1rem 0; display: flex; justify-content: space-between;"><strong>Customer Acquisition Cost:</strong> $2,500</li>
+                        <li style="margin: 1rem 0; display: flex; justify-content: space-between;"><strong>Lifetime Value:</strong> $45,000</li>
+                        <li style="margin: 1rem 0; display: flex; justify-content: space-between;"><strong>Gross Margin:</strong> 65%</li>
+                        <li style="margin: 1rem 0; display: flex; justify-content: space-between;"><strong>Break-even:</strong> 9 months</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Ready to Invest in the Future?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Join us in revolutionizing the Dominican Republic's business automation</p>
+            
+            <div class="contact-info">
+                <div>
+                    <h3>📧 Email</h3>
+                    <p>investors@sapiensrobotic.com</p>
+                </div>
+                <div>
+                    <h3>📱 Phone</h3>
+                    <p>+1 (809) 555-0123</p>
+                </div>
+                <div>
+                    <h3>📍 Location</h3>
+                    <p>Santo Domingo, Dominican Republic</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem;">
+                <a href="mailto:investors@sapiensrobotic.com" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 40px;">Schedule a Meeting</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: rgba(0,0,0,0.8); color: white; text-align: center; padding: 2rem 0;">
+        <div class="container">
+            <p>&copy; 2024 Sapiens ROBOTIC. Automating the business future of the Dominican Republic.</p>
+            <p style="margin-top: 1rem; opacity: 0.7;">This presentation is confidential and proprietary. All financial projections are estimates.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
